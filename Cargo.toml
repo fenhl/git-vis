@@ -1,0 +1,27 @@
+[package]
+name = "git-vis"
+version = "0.1.0"
+edition = "2021"
+
+[lints.rust]
+rust_2018_idioms = "deny"
+unsafe_code = "forbid"
+unused = "deny"
+unused_crate_dependencies = "deny"
+unused_import_braces = "deny"
+unused_lifetimes = "deny"
+unused_qualifications = "deny"
+warnings = "deny"
+
+[profile.release]
+codegen-units = 1
+lto = true
+strip = true
+
+[dependencies]
+chrono = "0.4.39"
+clap = { version = "4.5.23", features = ["derive"] }
+gix = "0.68.0"
+if_chain = "1.0.2"
+thiserror = "2.0.8"
+wheel = { git = "https://github.com/fenhl/wheel", branch = "main" }
